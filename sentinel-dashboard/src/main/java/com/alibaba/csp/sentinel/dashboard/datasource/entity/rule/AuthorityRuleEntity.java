@@ -42,6 +42,38 @@ public class AuthorityRuleEntity extends AbstractRuleEntity<AuthorityRule> {
         return entity;
     }
 
+    private String limitApp;
+    private String resource;
+    private int strategy;
+
+    public void setLimitApp(String limitApp) {
+        this.limitApp = limitApp;
+    }
+
+    public void setResource(String resource) {
+        this.resource = resource;
+    }
+
+    public void setStrategy(int strategy) {
+        this.strategy = strategy;
+    }
+    @JsonIgnore
+    @JSONField(serialize = false)
+    public String getLimitAppL() {
+        return this.limitApp;
+    }
+
+    @JsonIgnore
+    @JSONField(serialize = false)
+    public String getResourceL() {
+        return this.resource;
+    }
+
+    @JsonIgnore
+    @JSONField(serialize = false)
+    public int getStrategyL() {
+        return this.strategy;
+    }
     @JsonIgnore
     @JSONField(serialize = false)
     public String getLimitApp() {
